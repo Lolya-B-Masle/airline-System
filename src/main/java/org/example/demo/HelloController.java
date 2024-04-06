@@ -122,8 +122,6 @@ public class HelloController {
         BeginTime.setCellValueFactory(new PropertyValueFactory<Flight, String>("startTime"));
         EndTime.setCellValueFactory(new PropertyValueFactory<Flight, String>("endTime"));
 
-
-
         Table.setItems(list);
         int count = list.size();
 
@@ -140,7 +138,6 @@ public class HelloController {
             list.add(new Flight(list.size() + 1, "test", "test", "test", "test", "test", "test"));
 
             int count1 = list.size();
-
             CountOfWrites.setText("" + count1);
 
             alert.showAndWait();
@@ -180,6 +177,9 @@ public class HelloController {
             alert.setTitle("Удаление рейса");
             alert.setHeaderText(null);
             alert.setContentText("Рейс успешно удален");
+
+            int count2 = list.size();
+            CountOfWrites.setText("" + count2);
 
             alert.showAndWait();
         });
