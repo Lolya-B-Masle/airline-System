@@ -1,15 +1,22 @@
 package org.example.demo;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 import javafx.collections.ObservableList;
 import javafx.beans.Observable;
 import javafx.collections.FXCollections;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TreeItemPropertyValueFactory;
+import javafx.stage.Stage;
 
 public class HelloController {
 
@@ -124,12 +131,11 @@ public class HelloController {
         BeginTime.setCellValueFactory(new PropertyValueFactory<Flight, String>("startTime"));
         EndTime.setCellValueFactory(new PropertyValueFactory<Flight, String>("endTime"));
 
-
-
         Table.setItems(list);
         int count = list.size();
 
         CountOfWrites.setText("" + count);
+
 
         AddBtn.setOnAction(event -> {
             System.out.println("Запись добавлена");
@@ -142,10 +148,11 @@ public class HelloController {
             list.add(new Flight(list.size() + 1, "test", "test", "test", "test", "test", "test"));
 
             int count1 = list.size();
-
             CountOfWrites.setText("" + count1);
 
             alert.showAndWait();
+
+
         });
 
         FilterBtn.setOnAction(event -> {
@@ -183,6 +190,9 @@ public class HelloController {
             alert.setHeaderText(null);
             alert.setContentText("Рейс успешно удален");
 
+            int count2 = list.size();
+            CountOfWrites.setText("" + count2);
+
             alert.showAndWait();
         });
 
@@ -197,6 +207,28 @@ public class HelloController {
             alert.showAndWait();
         });
 
+<<<<<<< HEAD
+=======
+        SearchBtn.setOnAction(event -> {
+            SearchBtn.getScene().getWindow().hide();
+
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("privileges.fxml"));
+
+            try {
+                loader.load();
+            }
+            catch (IOException e){
+                e.printStackTrace();
+            }
+
+            Parent root = loader.getRoot();
+            Stage stage = new Stage();
+
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
+        });
+>>>>>>> a219c8bb52565301ae0c2161f290715f3d3f901f
 
     }
 }
