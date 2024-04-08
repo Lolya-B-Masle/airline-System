@@ -10,6 +10,7 @@ import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -148,6 +149,8 @@ public class HelloController {
             CountOfWrites.setText("" + count1);
 
             alert.showAndWait();
+
+
         });
 
         FilterBtn.setOnAction(event -> {
@@ -200,6 +203,26 @@ public class HelloController {
             alert.setContentText("Рейс редактирован");
 
             alert.showAndWait();
+        });
+
+        SearchBtn.setOnAction(event -> {
+            SearchBtn.getScene().getWindow().hide();
+
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("privileges.fxml"));
+
+            try {
+                loader.load();
+            }
+            catch (IOException e){
+                e.printStackTrace();
+            }
+
+            Parent root = loader.getRoot();
+            Stage stage = new Stage();
+
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
         });
 
     }

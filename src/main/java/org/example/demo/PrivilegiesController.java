@@ -95,7 +95,7 @@ public class PrivilegiesController {
         Stage privelegies = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("privilegies.fxml"));
         privelegies.setTitle("Льготы");
-        privelegies.setScene(new Scene(root, ));
+       // privelegies.setScene(new Scene(root, ));
     }
 
     @FXML
