@@ -103,6 +103,8 @@ public class HelloController {
     @FXML
     private MenuItem schedule;
 
+
+
     ObservableList<Flight> list = FXCollections.observableArrayList(
         new Flight(1, "ПЛ-524", "ВВО-ЕМВ-ПЛК", "26.06.24", "04.09.024", "6:05", "18:10"),
         new Flight(2, "С7-107", "ДМД-ВВО", "01.06.24", "23.10.24", "14:00", "22:30"),
@@ -194,6 +196,8 @@ public class HelloController {
 
             alert.showAndWait();
         });
+
+
     }
 }
 

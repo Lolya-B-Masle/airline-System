@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo.TicketController">
+    <children>
+        <MenuBar fx:id="NavBar" prefHeight="27.0" prefWidth="600.0">
+            <menus>
+                <Menu fx:id="ReportTbElement" mnemonicParsing="false" text="Отчеты">
+                    <items>
+                        <MenuItem fx:id="flights" mnemonicParsing="false" text="Рейсы" />
+                        <MenuItem fx:id="completedFlights" mnemonicParsing="false" text="Завершенные рейсы" />
+                        <MenuItem fx:id="canceledFlights" mnemonicParsing="false" text="Отмененные рейсы" />
+                    </items>
+                </Menu>
+                <Menu fx:id="ServiceTbElement" mnemonicParsing="false" text="Сервис">
+                    <items>
+                        <MenuItem fx:id="help" mnemonicParsing="false" text="Справочник" />
+                        <MenuItem fx:id="sendError" mnemonicParsing="false" text="Сообщить об ошибке" />
+                    </items>
+                </Menu>
+                <Menu fx:id="WindowsTbElement" mnemonicParsing="false" text="Окна">
+                    <items>
+                        <MenuItem fx:id="cashRegister" mnemonicParsing="false" text="Касса" />
+                        <MenuItem fx:id="privileges" mnemonicParsing="false" text="Льготы" />
+                        <MenuItem fx:id="shedule" mnemonicParsing="false" text="Расписание" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="closeAll" mnemonicParsing="false" text="Закрыть все" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <Button fx:id="FilterBtn" layoutX="416.0" layoutY="151.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="81.0" text="Фильтр" />
+        <TableView fx:id="Table" layoutX="5.0" layoutY="84.0" prefHeight="310.0" prefWidth="403.0">
+            <columns>
+                <TableColumn fx:id="lName" prefWidth="93.0" text="Фамилия" />
+                <TableColumn fx:id="name" prefWidth="75.0" text="Имя" />
+                <TableColumn fx:id="fName" prefWidth="87.0" text="Отчество" />
+            <TableColumn fx:id="ticket" prefWidth="87.0" text="Билет" />
+            <TableColumn fx:id="ticketCount" prefWidth="60.0" text="Кол-во" />
+            </columns>
+        </TableView>
+        <Label layoutX="22.0" layoutY="46.0" prefHeight="17.0" prefWidth="58.0" text="Записей:">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Label>
+        <TextField fx:id="CountOfWrites" accessibleRole="TEXT" alignment="CENTER" editable="false" layoutX="89.0" layoutY="43.0" prefHeight="25.0" prefWidth="42.0" />
+        <Button fx:id="AddBtn" layoutX="416.0" layoutY="90.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="81.0" text="Добавить" />
+        <Button fx:id="EditBtn" layoutX="505.0" layoutY="151.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="81.0" text="Редактировать" />
+        <Button fx:id="DelBtn" layoutX="505.0" layoutY="90.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="81.0" text="Удалить" />
+        <Button fx:id="backBtn" layoutX="511.0" layoutY="364.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="81.0" text="Назад" />
+    </children>
+</AnchorPane>
