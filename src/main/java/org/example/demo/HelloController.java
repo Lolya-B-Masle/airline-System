@@ -51,19 +51,11 @@ public class HelloController {
     private TableColumn<Flight, String> EndTime;
 
     @FXML
-    private Button FilterBtn;
-
-    @FXML
     private TableColumn<Flight, Integer> ID;
-
-    @FXML
-    private MenuBar NavBar;
 
     @FXML
     private TableColumn<Flight, String> Path;
 
-    @FXML
-    private Menu ReportTbElement;
 
     @FXML
     private TableColumn<Flight, String> Road;
@@ -75,41 +67,13 @@ public class HelloController {
     private Button ServiceBtn;
 
     @FXML
-    private Menu ServiceTbElement;
-
-    @FXML
     private TableView<Flight> Table;
 
     @FXML
-    private Menu WindowsTbElement;
+    private Button cashRegisterBtn;
 
     @FXML
-    private MenuItem canceledFlights;
-
-    @FXML
-    private MenuItem cashRegister;
-
-    @FXML
-    private MenuItem closeAll;
-
-    @FXML
-    private MenuItem completedFlights;
-
-    @FXML
-    private MenuItem flights;
-
-    @FXML
-    private MenuItem help;
-
-    @FXML
-    private MenuItem privileges;
-
-    @FXML
-    private MenuItem sendError;
-
-    @FXML
-    private MenuItem schedule;
-
+    private Button privilegiesBtn;
 
 
     ObservableList<Flight> list = FXCollections.observableArrayList(
@@ -136,7 +100,6 @@ public class HelloController {
 
         CountOfWrites.setText("" + count);
 
-
         AddBtn.setOnAction(event -> {
             System.out.println("Запись добавлена");
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -151,19 +114,6 @@ public class HelloController {
             CountOfWrites.setText("" + count1);
 
             alert.showAndWait();
-
-
-        });
-
-        FilterBtn.setOnAction(event -> {
-            System.out.println("Применен фильтр");
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-
-            alert.setTitle("Фильтр");
-            alert.setHeaderText(null);
-            alert.setContentText("Опции фильтра");
-
-            alert.showAndWait();
         });
 
         ServiceBtn.setOnAction(event -> {
@@ -173,6 +123,17 @@ public class HelloController {
             alert.setTitle("Сервис");
             alert.setHeaderText(null);
             alert.setContentText("Опции сервиса");
+
+            alert.showAndWait();
+        });
+
+        SearchBtn.setOnAction(event -> {
+            System.out.println("Выбран поиск");
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+
+            alert.setTitle("Поиск");
+            alert.setHeaderText(null);
+            alert.setContentText("Параметры поиска");
 
             alert.showAndWait();
         });
@@ -207,10 +168,8 @@ public class HelloController {
             alert.showAndWait();
         });
 
-<<<<<<< HEAD
-=======
-        SearchBtn.setOnAction(event -> {
-            SearchBtn.getScene().getWindow().hide();
+        privilegiesBtn.setOnAction(event -> {
+            privilegiesBtn.getScene().getWindow().hide();
 
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getResource("privileges.fxml"));
@@ -228,7 +187,26 @@ public class HelloController {
             stage.setScene(new Scene(root));
             stage.showAndWait();
         });
->>>>>>> a219c8bb52565301ae0c2161f290715f3d3f901f
+
+        cashRegisterBtn.setOnAction(event -> {
+            cashRegisterBtn.getScene().getWindow().hide();
+
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("Tickets.fxml"));
+
+            try {
+                loader.load();
+            }
+            catch (IOException e){
+                e.printStackTrace();
+            }
+
+            Parent root = loader.getRoot();
+            Stage stage = new Stage();
+
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
+        });
 
     }
 }

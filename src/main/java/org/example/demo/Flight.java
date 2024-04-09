@@ -14,34 +14,6 @@ public class Flight {
         this.id = id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setPath(String path) {
-        this.path = path;
-    }
-
-    public void setStart(String start) {
-        this.start = start;
-    }
-
-    public void setEnd(String end) {
-        this.end = end;
-    }
-
-    public void setStartTime(String startTime) {
-        this.startTime = startTime;
-    }
-
-    public void setEndTime(String endTime) {
-        this.endTime = endTime;
-    }
-
     public int getId() {
         return id;
     }
@@ -68,5 +40,33 @@ public class Flight {
 
     public String getEndTime() {
         return endTime;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
+    }
+
+    public void setStart(String start) {
+        this.start = start;
+    }
+
+    public void setEnd(String end) {
+        this.end = end;
+    }
+
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
+    }
+
+    public void setEndTime(String endTime) {
+        this.endTime = endTime;
     }
 }

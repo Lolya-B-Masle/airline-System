@@ -1,47 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.SeparatorMenuItem?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo.PrivilegiesController">
    <children>
-      <MenuBar fx:id="NavBar" prefHeight="27.0" prefWidth="600.0">
-        <menus>
-          <Menu fx:id="ReportTbElement" mnemonicParsing="false" text="Отчеты">
-            <items>
-              <MenuItem fx:id="flights" mnemonicParsing="false" text="Рейсы" />
-                  <MenuItem fx:id="completedFlights" mnemonicParsing="false" text="Завершенные рейсы" />
-                  <MenuItem fx:id="canceledFlights" mnemonicParsing="false" text="Отмененные рейсы" />
-            </items>
-          </Menu>
-          <Menu fx:id="ServiceTbElement" mnemonicParsing="false" text="Сервис">
-            <items>
-              <MenuItem fx:id="help" mnemonicParsing="false" text="Справочник" />
-                  <MenuItem fx:id="sendError" mnemonicParsing="false" text="Сообщить об ошибке" />
-            </items>
-          </Menu>
-          <Menu fx:id="WindowsTbElement" mnemonicParsing="false" text="Окна">
-            <items>
-                  <MenuItem fx:id="cashRegister" mnemonicParsing="false" text="Касса" />
-                  <MenuItem fx:id="privileges" mnemonicParsing="false" text="Льготы" />
-              <MenuItem fx:id="shedule" mnemonicParsing="false" text="Расписание" />
-                  <SeparatorMenuItem mnemonicParsing="false" />
-                  <MenuItem fx:id="closeAll" mnemonicParsing="false" text="Закрыть все" />
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
       <TableView fx:id="Table" layoutX="14.0" layoutY="43.0" prefHeight="303.0" prefWidth="410.0">
         <columns>
-          <TableColumn fx:id="Path" prefWidth="147.20001220703125" text="Льгота" />
-          <TableColumn fx:id="Road" prefWidth="172.79998779296875" text="Условия" />
-            <TableColumn fx:id="ID" minWidth="0.0" prefWidth="90.4000244140625" text="Кол-во" />
+          <TableColumn fx:id="privelegies" prefWidth="147.20001220703125" text="Льгота" />
+          <TableColumn fx:id="conditions" prefWidth="172.79998779296875" text="Условия" />
+            <TableColumn fx:id="amount" minWidth="0.0" prefWidth="90.4000244140625" text="Кол-во" />
         </columns>
       </TableView>
       <Button fx:id="backBtn" layoutX="14.0" layoutY="360.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="81.0" text="Назад" />
@@ -49,5 +19,7 @@
       <Button fx:id="EditBtn" layoutX="474.0" layoutY="140.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="81.0" text="Редактировать" />
       <Button fx:id="DelBtn" layoutX="474.0" layoutY="261.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="81.0" text="Удалить" />
       <Button fx:id="appointBtn" layoutX="474.0" layoutY="181.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="81.0" text="Назначить" />
+      <Button fx:id="cashRegisterBtn" layoutX="14.0" layoutY="11.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="81.0" text="Касса" />
+      <Button fx:id="scheduleBtn" layoutX="103.0" layoutY="11.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="81.0" text="Расписание" />
    </children>
 </AnchorPane>
